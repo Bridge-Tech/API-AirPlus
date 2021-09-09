@@ -6,14 +6,8 @@ namespace api_AirPlus.Models
 {
     public partial class apiDbAirplusContext : DbContext
     {
-        public apiDbAirplusContext()
-        {
-        }
-
-        public apiDbAirplusContext(DbContextOptions<apiDbAirplusContext> options)
-            : base(options)
-        {
-        }
+        public apiDbAirplusContext() { }
+        public apiDbAirplusContext(DbContextOptions<apiDbAirplusContext> options) : base(options) { }
 
         public virtual DbSet<TEmployee> TEmployee { get; set; }
 
@@ -21,8 +15,8 @@ namespace api_AirPlus.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseMySql("server=localhost;user id=root;password=teste123@;database=apiDbAirplus", x => x.ServerVersion("8.0.24-mysql"));
+                optionsBuilder.UseMySql("server=localhost;user id=root;password=teste123@;database=apiDbAirplus", 
+                x => x.ServerVersion("8.0.24-mysql"));
             }
         }
 
@@ -33,15 +27,19 @@ namespace api_AirPlus.Models
                 entity.HasKey(e => e.IdEmployee)
                     .HasName("PRIMARY");
 
+                entity.Property(e => e.DsSexo)
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
+
                 entity.Property(e => e.NmCity)
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
 
-                entity.Property(e => e.NmDistrict)
+                entity.Property(e => e.NmEmployee)
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
 
-                entity.Property(e => e.NmEmployee)
+                entity.Property(e => e.NmRua)
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
 

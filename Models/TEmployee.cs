@@ -13,17 +13,23 @@ namespace api_AirPlus.Models
         public int IdEmployee { get; set; }
 
         [Column("nm_employee", TypeName = "varchar(100)")]
-        public string NmEmployee { get; set; }
+        public string? NmEmployee { get; set; }
 
-        [Column("nm_state", TypeName = "varchar(30)")]
-        public string NmState { get; set; }
+        [Column("ds_sexo", TypeName = "varchar(10)")]
+        public string? DsSexo { get; set; }
+
+        [Column("vl_idade")]
+        public int? VlIdade { get; set; }
 
         [Column("nm_city", TypeName = "varchar(60)")]
         public string NmCity { get; set; }
 
-        [Column("nm_district", TypeName = "varchar(60)")]
-        public string NmDistrict { get; set; }
-        
+        [Column("nm_state", TypeName = "varchar(30)")]
+        public string NmState { get; set; }
+
+        [Column("nm_rua", TypeName = "varchar(60)")]
+        public string NmRua { get; set; }
+
         [Column("nr_phone", TypeName = "varchar(30)")]
         public string NrPhone { get; set; }
     }
