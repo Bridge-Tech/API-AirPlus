@@ -13,11 +13,11 @@ namespace api_AirPlus.Models
         public int IdEmployee { get; set; }
 
         [Column("nm_employee", TypeName = "varchar(100)")]
-        public string? NmEmployee { get; set; }
+        public string NmEmployee { get; set; }
 
         [Column("ds_sexo", TypeName = "varchar(10)")]
-        public string? DsSexo { get; set; }
-
+        public string DsSexo { get; set; }
+        
         [Column("vl_idade")]
         public int? VlIdade { get; set; }
 
