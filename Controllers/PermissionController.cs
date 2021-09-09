@@ -10,7 +10,7 @@ namespace api_AirPlus.Controllers
     [Route("[controller]")]
     public class PermissionController : ControllerBase
     {
-        [HttpPost] //http://localhost:5000/permission
+        [HttpPost] // http://localhost:5000/permission
         public Models.TPermission Cadastrar(Models.TPermission permission)
         {
             Models.apiDbAirplusContext ctx = new Models.apiDbAirplusContext();
@@ -20,7 +20,7 @@ namespace api_AirPlus.Controllers
             return permission;
         }
 
-        [HttpGet] //http://localhost:5000/permission
+        [HttpGet] // http://localhost:5000/permission
         public List<Models.TPermission> Listar()
         {
             Models.apiDbAirplusContext ctx = new Models.apiDbAirplusContext();
@@ -29,7 +29,7 @@ namespace api_AirPlus.Controllers
             return lstPermissions;
         }
 
-        [HttpGet("consultar")] //http://localhost:5000/permission/consultar?disponivel=true
+        [HttpGet("consultar")] // http://localhost:5000/permission/consultar?disponivel=true
         public List<Models.TPermission> Consultar(bool disponivel)
         {
             Models.apiDbAirplusContext ctx = new Models.apiDbAirplusContext();

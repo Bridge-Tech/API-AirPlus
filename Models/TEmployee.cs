@@ -17,7 +17,7 @@ namespace api_AirPlus.Models
 
         [Column("ds_sexo", TypeName = "varchar(10)")]
         public string DsSexo { get; set; }
-        
+
         [Column("vl_idade")]
         public int? VlIdade { get; set; }
 

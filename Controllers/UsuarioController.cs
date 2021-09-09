@@ -8,9 +8,9 @@ namespace api_AirPlus.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class UsuarioController: ControllerBase
+    public class UsuarioController : ControllerBase
     {
-        [HttpPost] //http://localhost:5000/usuario
+        [HttpPost] // http://localhost:5000/usuario
         public Models.TUsuario Cadastrar(Models.TUsuario usuario)
         {
             Models.apiDbAirplusContext ctx = new Models.apiDbAirplusContext();

@@ -10,7 +10,7 @@ namespace api_AirPlus.Controllers
     [Route("[controller]")]
     public class EmployeeController : ControllerBase
     {
-        [HttpPost] //http://localhost:5000/employee
+        [HttpPost] // http://localhost:5000/employee
         public Models.TEmployee Cadastrar(Models.TEmployee employee)
         {
             Models.apiDbAirplusContext ctx = new Models.apiDbAirplusContext();
@@ -20,7 +20,7 @@ namespace api_AirPlus.Controllers
             return employee;
         }
 
-        [HttpGet] //http://localhost:5000/employee
+        [HttpGet] // http://localhost:5000/employee
         public List<Models.TEmployee> Listar()
         {
             Models.apiDbAirplusContext ctx = new Models.apiDbAirplusContext();
@@ -29,7 +29,7 @@ namespace api_AirPlus.Controllers
             return lstEmployees;
         }
 
-        [HttpGet("consultar")] //http://localhost:5000/employee/consultar?sexo=masculino
+        [HttpGet("consultar")] // http://localhost:5000/employee/consultar?sexo=masculino
         public List<Models.TEmployee> Consultar(string sexo)
         {
             Models.apiDbAirplusContext ctx = new Models.apiDbAirplusContext();
@@ -38,7 +38,7 @@ namespace api_AirPlus.Controllers
             return lstEmployees;
         }
 
-        [HttpPut] //http://localhost:5000/employee
+        [HttpPut] // http://localhost:5000/employee
         public void Alterar(Models.TEmployee employee)
         {
             Models.apiDbAirplusContext ctx = new Models.apiDbAirplusContext();
