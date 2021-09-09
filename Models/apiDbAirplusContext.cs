@@ -7,9 +7,11 @@ namespace api_AirPlus.Models
     public partial class apiDbAirplusContext : DbContext
     {
         public apiDbAirplusContext() { }
+
         public apiDbAirplusContext(DbContextOptions<apiDbAirplusContext> options) : base(options) { }
 
         public virtual DbSet<TEmployee> TEmployee { get; set; }
+        public virtual DbSet<TUsuario> TUsuario { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -48,6 +50,20 @@ namespace api_AirPlus.Models
                     .HasCollation("utf8mb4_0900_ai_ci");
 
                 entity.Property(e => e.NrPhone)
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
+            });
+
+            modelBuilder.Entity<TUsuario>(entity =>
+            {
+                entity.HasKey(e => e.IdUsuario)
+                    .HasName("PRIMARY");
+
+                entity.Property(e => e.DsSenha)
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
+
+                entity.Property(e => e.NmUsuario)
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
             });

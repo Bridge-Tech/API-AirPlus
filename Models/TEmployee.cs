@@ -29,7 +29,7 @@ namespace api_AirPlus.Models
 
         [Column("nm_rua", TypeName = "varchar(60)")]
         public string NmRua { get; set; }
-
+        
         [Column("nr_phone", TypeName = "varchar(30)")]
         public string NrPhone { get; set; }
     }
